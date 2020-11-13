@@ -1,0 +1,65 @@
+<idea-plugin version="2">
+  <id>org.solidity-baseline</id>
+  <name>Baseline Protocol</name>
+  <version>1.10</version>
+  <vendor email="sam@freighttrust.com" url="http://oasis.org">Baseline Protocol</vendor>
+
+  <description>
+    <![CDATA[
+    Baseline Protocol Plugin enables <a href="https://github.com/oasis/baseline">baseline</a>
+    configuration introspection capabilities in your project.
+     It enables sharing of connection information as well as authorization information for enterprises using
+     the Etheruem Network.
+    ]]>
+  </description>
+
+  <change-notes>
+    <![CDATA[
+    <h3>v0.1 Changelog</h3><br />
+    <em>Plugin does load configuration from .baseline.json on project load/em><br />
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="143.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable groupId="tools"
+                             displayName="baseline"
+                             instance="org.baseline.settings.ui.SettingsPage"/>
+
+    <localInspection language="Solidity" groupName="Solidity baseline"
+                     displayName="baseline Warnings"
+                     enabledByDefault="true"
+                     level="WARNING"
+                     runForWholeFile="true"
+                     implementationClass="org.baseline.WarnInspections"/>
+
+    <localInspection language="Solidity" groupName="Solidity baseline"
+                     displayName="baseline Errors"
+                     enabledByDefault="true"
+                     level="ERROR"
+                     runForWholeFile="true"
+                     implementationClass="org.baseline.ErrorInspections"/>
+  </extensions>
+
+  <application-components>
+    <component>
+      <implementation-class>org.baseline.settings.data.SettingsRepo</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>org.baseline.common.SolidityPluginDetector</implementation-class>
+    </component>
+  </application-components>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
