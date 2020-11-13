@@ -1,0 +1,19 @@
+{
+  "name": "@baseline-protocol/server",
+  "version": "1.0.0",
+  "description": "validation and authorization configuration format",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambacha/baseline-server.git"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/sambacha/baseline-server/issues"
+  },
+  "homepage": "https://github.com/sambacha/baseline-server#readme"
+}
