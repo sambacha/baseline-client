@@ -1,4 +1,4 @@
-package idrabenia.baseline.client.process
+package org.baseline.client.process
 
 
 interface AbstractBaselineProcess {
